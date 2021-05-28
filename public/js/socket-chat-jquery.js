@@ -5,9 +5,20 @@ let divUsuarios = $('#divUsuarios');
 let formEnviar =$('#formEnviar');
 let txtMensaje = $('#txtMensaje');
 let divChatBox = $('#divChatbox');
+let tituloSala = $('#tituloSala');
 
 let nombre=params.get('nombre');
 let sala=params.get('sala');
+
+function renderizarSala(sala){
+    var html='';
+
+    html += '<h3 class="box-title">Sala de chat <small>'+params.get('sala')+'</small></h3>';
+
+    tituloSala.html(html)
+}
+
+
 //Funciones para renderizar usuarios
 
 function renderizarUsuarios(personas){

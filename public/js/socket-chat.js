@@ -25,6 +25,7 @@ socket.on('connect', function() {
     socket.emit('entrarChat', usuario, function(resp) {
         //console.log('Usuarios conectados', resp);
         renderizarUsuarios(resp);
+        renderizarSala(resp);
     });
 
 });
