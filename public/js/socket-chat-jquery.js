@@ -25,7 +25,7 @@ function renderizarUsuarios(personas){
 
 
     console.log(personas)
-    
+    let admi = 'BuenGusto' 
     var html ='';
 
     html += '<li>';
@@ -34,11 +34,12 @@ function renderizarUsuarios(personas){
 
     for (let i = 0; i < personas.length; i++) {
         html += '<li>';
-        html += '<a data-id="'+personas[i].id+'" href="javascript:void(0)"><img src="assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>'+personas[i].nombre+'<small class="text-success">online</small></span></a>';
+        if (personas[i].nombre==='Administrador') {
+            html += '<a data-id="'+personas[i].id+'" href="javascript:void(0)"><img src="assets/images/users/'+admi+'.png" alt="user-img" class="img-circle"> <span>'+personas[i].nombre+'<small class="text-success">online</small></span></a>';
+        }else{
+            html += '<a data-id="'+personas[i].id+'" href="javascript:void(0)"><img src="assets/images/users/1.jpg" alt="user-img" class="img-circle"> <span>'+personas[i].nombre+'<small class="text-success">online</small></span></a>';
+        }
         html += '</li>';
-
-
-        
     }
 
     divUsuarios.html(html);
